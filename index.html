@@ -11,7 +11,9 @@
 </body>
 <script>
     function openCamera() {
-        window.OpenCameraCallback.postMessage()
+        console.log("mo Camera")
+        console.log(window.OpenCameraCallback)
+        window.OpenCameraCallback.postMessage("Mo di m")
     }
 
     function returnFileOpenCamera(obj) {
