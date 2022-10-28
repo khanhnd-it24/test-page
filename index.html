@@ -8,6 +8,7 @@
 </head>
 <body>
     <button id="open_camera" onclick="openCamera()">Open Camera</button>
+    <img id="image_return" src="#" alt="preview" />
 </body>
 <script>
     function openCamera() {
@@ -16,8 +17,11 @@
         window.OpenCameraCallback.postMessage("Mo di m")
     }
 
-    function returnFileOpenCamera(obj) {
-        console.log(obj)
+    function returnFileOpenCamera(file) {
+        var image_return = document.getElementById("image_return");
+        if (file) {
+            image_return.src = URL.createObjectURL(file)
+        }
     }
 </script>
 </html>
